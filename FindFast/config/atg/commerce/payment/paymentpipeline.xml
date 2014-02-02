@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE pipelinemanager
+	PUBLIC "-//Art Technology Group, Inc.//DTD Dynamo Pipeline Manager//EN"
+	'http://www.atg.com/dtds/pipelinemanager/pipelinemanager_1.0.dtd'>
+
+<pipelinemanager>
+
+<!-- This chain is used to process a loyalty points payment group-->
+<!-- This single chain knows how to auth/credit/debit a        -->
+<!-- payment group.  It also creates the LoyaltyPointsInfo object-->
+<!-- That is used by the LoyaltyPointsProcessor to perform an    -->
+<!-- auth/debit/credit. This chain gets invoked from the PaymentManager. -->
+
+
+<pipelinechain name="paypalPaymentChain" transaction="TX_REQUIRED" headlink="createPaypalInfo">
+  <pipelinelink name="createPaypalInfo" transaction="TX_MANDATORY">
+    <processor jndi="/com/paypal/payment/pipeline/ProcCreatePaypalInfo"/>
+    <transition returnvalue="1" link="processPaypalInfo"/>
+  </pipelinelink>
+  <pipelinelink name="processPaypalInfo" transaction="TX_MANDATORY">
+    <processor jndi="/com/paypal/payment/pipeline/ProcProcessPaypalInfo"/>
+  </pipelinelink>
+</pipelinechain>
+
+</pipelinemanager>
+<!-- @version $Id: $$Change: $ -->

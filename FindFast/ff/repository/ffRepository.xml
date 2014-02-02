@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE gsa-template
+        PUBLIC "-//Art Technology Group, Inc.//DTD General SQL Adapter//EN"
+        "http://www.atg.com/dtds/gsa/gsa_1.0.dtd">
+
+<gsa-template>
+
+  <header>
+    <name>FF Repository</name>
+    <author>Raju</author>
+    <version>Version 1.0 </version>
+  </header>
+
+  <item-descriptor name="comment">
+	<table name="user_comment" type="primary" id-column-name="comment_id">
+		<property name="user" column-name="user_detail" item-type="user" repository="/atg/userprofiling/ProfileAdapterRepository" />
+		<property name="commentTitle" column-name="comment_title" category="Title" data-type="string"/>
+		<property name="commentBody" column-name="comment_body" category="Comment" data-type="string"/>
+		<property name="status" column-name="status" category="Status" data-type="enumerated">
+			<attribute name="useCodeForValue" value="false"/>
+			<option value="Posted" code="0"/>
+			<option value="Not Posted" code="1"/>
+			<option value="Deleted" code="2"/>
+		</property>
+		<property name="postedDate" column-name="posted_date" data-type="timestamp" category="Posted Details"/>
+	</table>
+  </item-descriptor>
+  <item-descriptor name="rating">
+	<table name="user_rating" type="primary" id-column-name="rating_id">
+		<property name="totalRating" column-name="total_rating" data-type="string" category="Ratings"/>
+		<property name="totalCount" column-name="total_count" data-type="string" category="Ratings"/>
+		<property name="lastDateRated" column-name="last_date_rated" data-type="timestamp" category="Ratings"/>
+	</table>
+  </item-descriptor>
+</gsa-template>

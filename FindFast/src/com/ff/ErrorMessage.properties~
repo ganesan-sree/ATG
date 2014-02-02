@@ -1,0 +1,6 @@
+Error101={0} Should not be blank 
+Error102=Invalid Login Name
+Error103=Invalid Password
+Error104=Password and Confirm Password does not match
+Error105=Invalid Email
+Error106=First Name and Last Name should not contain Numeric Value

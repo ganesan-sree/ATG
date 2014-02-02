@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE pipelinemanager
+        PUBLIC "-//Art Technology Group, Inc.//DTD Dynamo Pipeline Manager//EN"
+        'http://www.atg.com/dtds/pipelinemanager/pipelinemanager_1.0.dtd'>
+
+<!-- $Id: //product/DCS/version/9.1/templates/B2CCommerce/config/atg/commerce/commercepipeline.xml#1 $$Change: 531151 $ -->
+<!-- This commerce pipeline configuration file defines the              -->
+<!-- chains used for B2C commerce applications.                         -->
+
+<pipelinemanager>
+ <pipelinechain name="processScheduledOrder" transaction="TX_REQUIRED" headlink="runProcessOrderPipeline" xml-combine="replace">
+    <pipelinelink name="runProcessOrderPipeline" transaction="TX_MANDATORY">
+      <processor jndi="/atg/commerce/order/processor/RunProcessOrderChain"/>
+      <transition returnvalue="1" link="sendMessageScheduledOrderMessage"/>
+    </pipelinelink>
+    <pipelinelink name="sendMessageScheduledOrderMessage" transaction="TX_MANDATORY">
+      <processor jndi="/atg/commerce/order/processor/SendScheduledOrderMessage"/>
+	   <transition returnvalue="1" link="addUserOrder"/>
+    </pipelinelink>
+ 
+	
+		<pipelinelink name="addUserOrder" transaction="TX_MANDATORY">
+			<processor jndi="/com/ff/commerce/UserOrderPipelineProc"/>
+		</pipelinelink>
+	</pipelinechain>
+	
+	
+
+</pipelinemanager>
+<!-- @version $Id: //product/DCS/version/9.1/templates/B2CCommerce/config/atg/commerce/commercepipeline.xml#1 $$Change: 531151 $ -->

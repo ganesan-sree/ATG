@@ -1,0 +1,4 @@
+$class=atg.nucleus.JNDIReference
+#JNDIName=java:/FendeOracleDS
+JNDIName=java:/ATGOracleDS
+maxSimultaneousResourcesOut=75

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+ATG-Config-Path: config/config.jar
+ATG-Required: DAS DPS DSS DCS DCS.CustomCatalogs B2BCommerce
+ATG-J2EE: j2ee-apps/fender
+ATG-EAR-Module: j2ee-apps/fender
+ATG-Class-Path: classes/classes.jar classes/
+ATG-Client-Class-Path: classes/classes.jar classes/
+
+Name: classes/classes.jar
+ATG-Client-Update-File: true
+

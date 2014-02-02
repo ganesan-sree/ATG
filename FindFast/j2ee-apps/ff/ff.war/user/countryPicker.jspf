@@ -1,0 +1,19 @@
+<%@ taglib uri="/dspTaglib" prefix="dsp"%>
+<dsp:page>
+<dsp:importbean bean="/atg/dynamo/droplet/ForEach"/>
+<dsp:importbean bean="/ff/help/CountryList"/>
+<dsp:importbean bean="/atg/userprofiling/Profile"/>
+
+<option value="">Select</option>
+<dsp:droplet name="ForEach">
+	<dsp:param name="array" bean="CountryList.places"/>
+	<dsp:oparam name="output">
+		
+		<option value="<dsp:valueof param="element.code"/>">
+		
+		<dsp:valueof param="element.displayName"/>
+		
+		</option>
+	</dsp:oparam>
+</dsp:droplet>
+</dsp:page>

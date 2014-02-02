@@ -1,0 +1,13 @@
+<datasources>
+	<local-tx-datasource> 
+		<jndi-name>ATGOracleDS</jndi-name>
+		<connection-url>jdbc:oracle:thin:@localhost:1521:XE</connection-url>
+		<driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+		
+		<user-name>findfast</user-name>
+		<password>findfast</password>
+		<min-pool-size>1</min-pool-size>
+		<max-pool-size>100</max-pool-size>
+   		<exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.OracleExceptionSorter</exception-sorter-class-name>              
+	</local-tx-datasource>
+</datasources>
