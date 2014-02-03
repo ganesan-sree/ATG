@@ -3,21 +3,16 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/subclassloader.jar"/>
-	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/spring-aop-1.2-rc1.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/servlet.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/resources.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/protocol.jar"/>
-	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/min-ejb3-api.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/jxl-2.6.6.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/jsp-api.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/jmdns-20.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/jaxb-libs104.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/jaxb-impl104.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/jaxb-api101.jar"/>
-	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/ice.jar"/>
-	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/groovy-all-1.7.2.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/filedist.jar"/>
-	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/ehcache-1.5.0.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/commons-httpclient-3.1.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/commons-discovery-0.2.jar"/>
@@ -31,5 +26,8 @@
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/BCC/lib/commons-io.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/BCC/lib/commons-fileupload-1.2.1.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/BCC/lib/classes.jar"/>
+	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DPS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DCS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="lib/commons-net-2.2-ftp.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,0 +1,7 @@
+$class=atg.service.jdbc.FakeXADataSource
+user=training
+needsSeparateUserInfo=false
+URL=jdbc:oracle:thin:@localhost:1521:XE
+readOnly=false
+password=training
+driver=oracle.jdbc.OracleDriver

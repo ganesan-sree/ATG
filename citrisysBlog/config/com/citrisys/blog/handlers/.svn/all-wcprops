@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Citrisys/!svn/ver/7303/madhavan/citrisysBlog/config/com/citrisys/blog/handlers
+END
+CommentHandler.properties
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Citrisys/!svn/ver/7361/madhavan/citrisysBlog/config/com/citrisys/blog/handlers/CommentHandler.properties
+END
+PostHandler.properties
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/Citrisys/!svn/ver/7361/madhavan/citrisysBlog/config/com/citrisys/blog/handlers/PostHandler.properties
+END
+BlogHandler.properties
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/Citrisys/!svn/ver/7361/madhavan/citrisysBlog/config/com/citrisys/blog/handlers/BlogHandler.properties
+END

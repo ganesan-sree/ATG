@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gsa-template
+        PUBLIC "-//Art Technology Group, Inc.//DTD General SQL Adapter//EN"
+        "http://www.atg.com/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+
+	<item-descriptor name="comment">
+		<table name="cb_comment" type="primary" id-column-name="comment_id">
+			<property name="id" column-name="comment_id" />
+			<property name="description" data-type="string" />
+			<property name="user" column-name="user_id" item-type="user"
+				repository="/atg/userprofiling/ProfileAdapterRepository" />
+		</table>
+	</item-descriptor>
+
+	<item-descriptor name="post">
+
+		<table name="cb_post" type="primary" id-column-name="post_id">
+			<property name="id" column-name="post_id" />
+			<property name="title" data-type="string" />
+			<property name="content" data-type="string" />
+		</table>
+		<table name="cb_post_rel_comment" type="multi" id-column-name="post_id">
+			<attribute name="cascadeDeleteOrder" value="first" />
+			<property name="comments" data-type="set"
+				component-item-type="comment" />
+		</table>
+		<table name="cb_post_author" type="auxiliary" id-column-name="post_id">
+			<property name="author" item-type="user"
+				repository="/atg/userprofiling/ProfileAdapterRepository" />
+		</table>
+
+	</item-descriptor>
+
+	<item-descriptor name="blog">
+
+		<table name="cb_blog" type="primary" id-column-name="blog_id">
+			<property name="id" column-name="blog_id" />
+			<property name="title" column-name="blog_title" data-type="string" />
+			<property name="url" column-name="blog_url" data-type="string" />
+		</table>
+		<table name="cb_blog_rel_post" type="multi" id-column-name="blog_id">
+			<attribute name="cascadeDeleteOrder" value="first" />
+			<property name="posts" data-type="set" component-item-type="post" />
+		</table>
+
+	</item-descriptor>
+
+</gsa-template>

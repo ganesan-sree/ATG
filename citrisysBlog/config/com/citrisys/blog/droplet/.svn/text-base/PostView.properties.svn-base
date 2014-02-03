@@ -1,0 +1,3 @@
+$class=com.citrisys.blog.droplet.PostView
+$scope=global
+blogRepo=/com/citrisys/blog/repo/BlogRepo

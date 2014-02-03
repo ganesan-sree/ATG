@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/Citrisys/!svn/ver/7303/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/blog
+END
+blogView.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/blog/blogView.jsp
+END
+editPost.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/blog/editPost.jsp
+END
+createPost.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/blog/createPost.jsp
+END
+editBlog.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/blog/editBlog.jsp
+END
+createBlog.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/Citrisys/!svn/ver/7422/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/blog/createBlog.jsp
+END
+postlist.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/blog/postlist.jsp
+END
+home.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/Citrisys/!svn/ver/7327/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/blog/home.jsp
+END
+bloglist.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Citrisys/!svn/ver/7422/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/blog/bloglist.jsp
+END
+allBlogs.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Citrisys/!svn/ver/7327/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/blog/allBlogs.jsp
+END
+blogPosts.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/Citrisys/!svn/ver/7303/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/blog/blogPosts.jsp
+END
+editComment.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/blog/editComment.jsp
+END
+postView.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Citrisys/!svn/ver/7422/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/blog/postView.jsp
+END

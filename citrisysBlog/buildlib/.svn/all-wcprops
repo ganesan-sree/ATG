@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/Citrisys/!svn/ver/7328/madhavan/citrisysBlog/buildlib
+END
+ant-contrib.jar
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/Citrisys/!svn/ver/7328/madhavan/citrisysBlog/buildlib/ant-contrib.jar
+END
+ant-junit.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/Citrisys/!svn/ver/7328/madhavan/citrisysBlog/buildlib/ant-junit.jar
+END
+atg-ant.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/Citrisys/!svn/ver/7328/madhavan/citrisysBlog/buildlib/atg-ant.jar
+END
+junit.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/Citrisys/!svn/ver/7328/madhavan/citrisysBlog/buildlib/junit.jar
+END
+hotswap.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/Citrisys/!svn/ver/7328/madhavan/citrisysBlog/buildlib/hotswap.jar
+END

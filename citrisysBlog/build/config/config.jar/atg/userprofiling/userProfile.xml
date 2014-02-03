@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gsa-template xml-combine="append">
+	<item-descriptor name="user">
+		<table name="cb_user_rel_blog" type="multi" id-column-name="user_id">
+			<attribute name="cascadeDeleteOrder" value="first" />
+			<property name="blogs" data-type="set" component-item-type="blog"
+				repository="/com/citrisys/blog/repo/BlogRepo" />
+		</table>
+		
+		
+		<table name="cb_user_rel_comment" type="multi" id-column-name="user_id">
+			<attribute name="cascadeDeleteOrder" value="first" />
+			<property name="comments" data-type="set"
+				component-item-type="comment" repository="/com/citrisys/blog/repo/BlogRepo" />
+		</table>
+		
+		
+	</item-descriptor>
+</gsa-template>

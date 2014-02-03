@@ -1,0 +1,6 @@
+dynamo.home=/opt/ATG/ATG9.1/home
+dynamo.server.name=original
+jboss.home=/opt/jboss-4.0.5.GA
+jboss.server=training
+standalone=false
+jar.configs.and.classes=false

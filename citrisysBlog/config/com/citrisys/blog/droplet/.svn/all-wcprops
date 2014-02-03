@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/Citrisys/!svn/ver/7303/madhavan/citrisysBlog/config/com/citrisys/blog/droplet
+END
+BlogList.properties
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Citrisys/!svn/ver/7326/madhavan/citrisysBlog/config/com/citrisys/blog/droplet/BlogList.properties
+END
+CommentItemLookupDroplet.properties
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/Citrisys/!svn/ver/7361/madhavan/citrisysBlog/config/com/citrisys/blog/droplet/CommentItemLookupDroplet.properties
+END
+PostItemLookupDroplet.properties
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/Citrisys/!svn/ver/7361/madhavan/citrisysBlog/config/com/citrisys/blog/droplet/PostItemLookupDroplet.properties
+END
+PostList.properties
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Citrisys/!svn/ver/7326/madhavan/citrisysBlog/config/com/citrisys/blog/droplet/PostList.properties
+END
+BlogItemLookupDroplet.properties
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/Citrisys/!svn/ver/7361/madhavan/citrisysBlog/config/com/citrisys/blog/droplet/BlogItemLookupDroplet.properties
+END
+PostView.properties
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/Citrisys/!svn/ver/7361/madhavan/citrisysBlog/config/com/citrisys/blog/droplet/PostView.properties
+END
