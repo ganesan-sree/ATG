@@ -29,8 +29,8 @@
 							<div class="top_prod_box_big"></div>
 							<div class="center_prod_box_big">
 								<div align="left">
-									<font color="cc0000"> <dsp:droplet
-											name="ProfileErrorMessageForEach">
+									<font color="cc0000">
+									 <dsp:droplet	name="ProfileErrorMessageForEach">
 											<dsp:param bean="ProfileFormHandler.formExceptions"
 												name="exceptions" />
 											<dsp:oparam name="outputStart">

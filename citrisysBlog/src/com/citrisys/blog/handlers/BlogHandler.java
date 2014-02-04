@@ -16,6 +16,7 @@ import javax.servlet.ServletException;
 import atg.core.util.StringUtils;
 import atg.droplet.DropletException;
 import atg.droplet.GenericFormHandler;
+import atg.userprofiling.ProfileFormHandler;
 
 import com.citrisys.blog.constants.CitrisysBlogConstants;
 

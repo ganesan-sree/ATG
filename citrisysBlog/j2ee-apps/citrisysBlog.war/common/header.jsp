@@ -18,5 +18,6 @@
 
 		<body>
 		   <div id="main-container">
+		   </div>
 		       	   
 </dsp:page>
