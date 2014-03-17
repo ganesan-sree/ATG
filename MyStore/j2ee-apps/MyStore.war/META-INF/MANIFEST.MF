@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+ATG-Module-Uri: my.war
+ATG-Context-Root: /my
+ATG-Module-Version: my.war

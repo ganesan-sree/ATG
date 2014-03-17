@@ -1,0 +1,11 @@
+Manifest-Version:  1.0
+ATG-Product: citrisysBlog
+ATG-Version-Full: 9.1
+ATG-Required: DAS DPS DSS DafEar.Admin
+ATG-Client-Class-Path: classes/classes.jar classes
+ATG-Class-Path: classes/classes.jar classes 
+ATG-Config-Path: config/ config/config.jar 
+ATG-Web-Module: j2ee-apps/citrisysBlog.war
+Name: classes
+ATG-Client-Update-File: true
+

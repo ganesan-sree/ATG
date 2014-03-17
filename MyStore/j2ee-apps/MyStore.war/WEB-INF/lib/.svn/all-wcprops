@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/WEB-INF/lib
+END
+jdbc2_0-stdext.jar
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/WEB-INF/lib/jdbc2_0-stdext.jar
+END
+taglibs-i18n.jar
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/WEB-INF/lib/taglibs-i18n.jar
+END
+coreTaglib1_0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/WEB-INF/lib/coreTaglib1_0.jar
+END
+jstl-1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/WEB-INF/lib/jstl-1.1.jar
+END
+recaptcha4j-0.0.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/WEB-INF/lib/recaptcha4j-0.0.7.jar
+END
+standard.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/WEB-INF/lib/standard.jar
+END
+saxpath.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/WEB-INF/lib/saxpath.jar
+END
+dspjspTaglib1_0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/WEB-INF/lib/dspjspTaglib1_0.jar
+END
+jstl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/WEB-INF/lib/jstl.jar
+END
+jaxen-full.jar
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/Citrisys/!svn/ver/7362/madhavan/citrisysBlog/j2ee-apps/citrisysBlog.war/WEB-INF/lib/jaxen-full.jar
+END
