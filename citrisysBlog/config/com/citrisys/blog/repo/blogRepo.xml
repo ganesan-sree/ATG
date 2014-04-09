@@ -32,7 +32,7 @@
 
 	</item-descriptor>
 
-	<item-descriptor name="blog">
+	<item-descriptor name="blog" >
 
 		<table name="cb_blog" type="primary" id-column-name="blog_id">
 			<property name="id" column-name="blog_id" />

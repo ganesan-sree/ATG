@@ -14,7 +14,7 @@
 		<dsp:oparam name="false">
 
 			<dsp:droplet name="/atg/dynamo/droplet/Redirect">
-				<dsp:param name="url" value="/blog/home.jsp" />
+				<dsp:param name="url" value="catalog/category.jsp" />
 			</dsp:droplet>
 		</dsp:oparam>
 	</dsp:droplet>

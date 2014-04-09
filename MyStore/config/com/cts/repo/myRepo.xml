@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gsa-template
+        PUBLIC "-//Art Technology Group, Inc.//DTD General SQL Adapter//EN"
+        "http://www.atg.com/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+
+	<item-descriptor name="my_user">
+		<table name="my_user" type="primary" id-column-name="user_id">
+			<property name="id" column-name="user_id" />
+			<property name="name" column-name="name"   data-type="string"  />
+			<property name="address" column-name="address" data-type="string" />			
+		</table>
+		
+		<table name="my_user_attr" type="multi" id-column-name="user_id">
+			<property name="phone" column-name="phone" data-type="mao" component-data-type="string" />
+		</table>
+	</item-descriptor>
+
+</gsa-template>

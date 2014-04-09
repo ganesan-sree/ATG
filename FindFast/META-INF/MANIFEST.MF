@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 ATG-Config-Path: config/config.jar
 ATG-Required: DAS DPS DSS B2CCommerce DCS
 ATG-J2EE: j2ee-apps/ff
-ATG-EAR-Module: j2ee-apps/ff
+ATG-EAR-Module: j2ee-apps/ff.war
 ATG-Class-Path: classes/classes.jar classes/
 ATG-Client-Class-Path: classes/classes.jar classes/
 

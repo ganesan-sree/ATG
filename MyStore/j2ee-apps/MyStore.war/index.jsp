@@ -7,7 +7,7 @@
 		<dsp:param bean="ProfileFormHandler.profile.transient" name="value" />
 		<dsp:oparam name="false">
 			<dsp:droplet name="/atg/dynamo/droplet/Redirect">
-				<dsp:param name="url" value="/blog/home.jsp" />
+				<dsp:param name="url" value="catalog/catalog.jsp" />
 			</dsp:droplet>
 		</dsp:oparam>
 		</dsp:droplet>
