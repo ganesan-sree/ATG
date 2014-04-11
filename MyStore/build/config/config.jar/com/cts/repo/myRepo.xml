@@ -12,7 +12,7 @@
 		</table>
 		
 		<table name="my_user_attr" type="multi" id-column-name="user_id">
-			<property name="phone" column-name="phone" data-type="mao" component-data-type="string" />
+			<property name="phone" column-name="phone" data-type="set" component-data-type="string" />
 		</table>
 	</item-descriptor>
 

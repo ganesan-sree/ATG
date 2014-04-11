@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE pipelinemanager
+        PUBLIC "-//Art Technology Group, Inc.//DTD Dynamo Pipeline Manager//EN"
+        'http://www.atg.com/dtds/pipelinemanager/pipelinemanager_1.0.dtd'>
+
+
+<pipelinemanager>
+	<pipelinechain name="myPipeline" transaction="TX_REQUIRED" 
+		headlink="firstLink">
+		<pipelinelink name="firstLink" transaction="TX_MANDATORY">
+			<processor jndi="/com/cts/pipeline/processor/FirstProccessor" />
+			<transition returnvalue="1" link="secondLink" />
+		</pipelinelink>
+		<pipelinelink name="secondLink" transaction="TX_MANDATORY">
+			<processor jndi="/com/cts/pipeline/processor/SecondProccessor" />
+			<transition returnvalue="1" link="thirdLink" />
+		</pipelinelink>
+
+		<pipelinelink name="thirdLink" transaction="TX_MANDATORY">
+			<processor jndi="/com/cts/pipeline/processor/ThirdProccessor" />
+		</pipelinelink>
+	</pipelinechain>
+
+
+
+</pipelinemanager>
+<!-- @version $Id: //product/DCS/version/9.1/templates/B2CCommerce/config/atg/commerce/commercepipeline.xml#1 
+	$$Change: 531151 $ -->

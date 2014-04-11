@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-ATG-Module-Uri: citrisysBlog.war
-ATG-Context-Root: /citrisysBlog
-ATG-Module-Version: citrisysblog.war

@@ -53,20 +53,20 @@ public class OrderRunner extends GenericFormHandler {
                             DynamoHttpServletResponse pResponse) throws ServletException, IOException {
     try {
     	System.out.println("11111111111111111111111111111");
-      OrderManager om = (OrderManager)Nucleus.getGlobalNucleus().resolveName("/atg/commerce/order/OrderManager");
-      CommerceItemManager cim = (CommerceItemManager)Nucleus.getGlobalNucleus().resolveName("/atg/commerce/order/CommerceItemManager");
-      ShippingGroupManager st = (ShippingGroupManager)Nucleus.getGlobalNucleus().resolveName("/atg/commerce/order/ShippingGroupManager");
-      PricingTools pt = (PricingTools)Nucleus.getGlobalNucleus().resolveName("/atg/commerce/pricing/PricingTools");
-      CommerceProfileTools pft = (CommerceProfileTools)Nucleus.getGlobalNucleus().resolveName("/atg/userprofiling/ProfileTools");
+      OrderManager orderManager = (OrderManager)Nucleus.getGlobalNucleus().resolveName("/atg/commerce/order/OrderManager");
+      CommerceItemManager commerceItemManager = (CommerceItemManager)Nucleus.getGlobalNucleus().resolveName("/atg/commerce/order/CommerceItemManager");
+      ShippingGroupManager shippingGroupManager = (ShippingGroupManager)Nucleus.getGlobalNucleus().resolveName("/atg/commerce/order/ShippingGroupManager");
+      PricingTools pricingTools = (PricingTools)Nucleus.getGlobalNucleus().resolveName("/atg/commerce/pricing/PricingTools");
+      CommerceProfileTools commerceProfileTools = (CommerceProfileTools)Nucleus.getGlobalNucleus().resolveName("/atg/userprofiling/ProfileTools");
  System.out.println("!!!!!!!!!!!!!!!!!!!!!");
       String profileId = "370000";
       
-      Order order = om.createOrder(profileId);
+      Order order = orderManager.createOrder(profileId);
       System.out.println("222222222222222222222222");
  
       ///sku chosen must have populated list_price in dcs_sku table
-      CommerceItem item1 = cim.createCommerceItem(getSku(),getProduct(),getQuantity());
-      cim.addItemToOrder(order, item1);
+      CommerceItem item1 = commerceItemManager.createCommerceItem(getSku(),getProduct(),getQuantity());
+      commerceItemManager.addItemToOrder(order, item1);
  System.out.println("33333333333333333333333333333333333333333333333");
       GSARepository r = (GSARepository)Nucleus.getGlobalNucleus().resolveName("/atg/userprofiling/ProfileAdapterRepository");
  
@@ -100,23 +100,23 @@ public class OrderRunner extends GenericFormHandler {
  
       HardgoodShippingGroup sg = (HardgoodShippingGroup)order.getShippingGroups().get(0);
       sg.setShippingAddress(rci);
-      cim.addItemQuantityToShippingGroup(order, item1.getId(), sg.getId(), getQuantity());
+      commerceItemManager.addItemQuantityToShippingGroup(order, item1.getId(), sg.getId(), getQuantity());
       if (isLoggingDebug())
         vlogDebug(sg.toString());
  
       PaymentGroup pg = (PaymentGroup)order.getPaymentGroups().get(0);
-      om.addRemainingOrderAmountToPaymentGroup(order, pg.getId());
+      orderManager.addRemainingOrderAmountToPaymentGroup(order, pg.getId());
  
-      pft.copyCreditCardToPaymentGroup("Real card", (CreditCard)pg, answer[0], new java.util.Locale("en"));
-      pt.priceOrderTotal(order);
+      commerceProfileTools.copyCreditCardToPaymentGroup("Real card", (CreditCard)pg, answer[0], new java.util.Locale("en"));
+      pricingTools.priceOrderTotal(order);
  
       if (isLoggingDebug()) {
         vlogDebug("Payment method = " + pg.getPaymentMethod());
-        vlogDebug("Pricing info = " + pt.toString());
-        vlogDebug("CreditCard = " + pft.getDefaultCreditCard(answer[0]));
+        vlogDebug("Pricing info = " + pricingTools.toString());
+        vlogDebug("CreditCard = " + commerceProfileTools.getDefaultCreditCard(answer[0]));
       }
  
-      PipelineResult pr = om.processOrder(order);
+      PipelineResult pr = orderManager.processOrder(order);
       if (pr.hasErrors()) {
         Object[] keys = pr.getErrorKeys();
         for (int i = 0; i < keys.length; i++) {

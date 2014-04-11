@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE pipeline-registry-configuration
+        PUBLIC "-//Art Technology Group, Inc.//DTD PipelineRegistry//EN"
+        'http://www.atg.com/dtds/pipelineregistry/pipelineregistry_1.0.dtd'>
+
+<pipeline-registry-configuration>
+
+ <pipeline-manager-registry >
+
+  <pipeline-manager >
+      <nucleus-path>/com/cts/pipeline/mypipeline</nucleus-path>
+  </pipeline-manager>
+  </pipeline-manager-registry>
+  
+  
+  <processor-registry >
+    <processor>
+      <nucleus-path>/com/cts/pipeline/processor/FirstProccessor</nucleus-path>
+      <display-name>FirstProc</display-name>
+      <category>My</category>
+    </processor>
+    <processor>
+      <nucleus-path>/com/cts/pipeline/processor/SecondProccessor</nucleus-path>
+      <display-name>SecondProc</display-name>
+      <category>My</category>
+    </processor>
+    <processor>
+      <nucleus-path>/com/cts/pipeline/processor/ThirdProccessor</nucleus-path>
+      <display-name>ThirdProc</display-name>
+      <category>My</category>
+    </processor>
+    
+    </processor-registry>
+</pipeline-registry-configuration>
