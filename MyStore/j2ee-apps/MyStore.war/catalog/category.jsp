@@ -6,7 +6,7 @@
 <%@ page import="atg.servlet.*"%>
 <dsp:page>
 	<dsp:droplet name="/atg/commerce/catalog/custom/CatalogLookup">
-		<dsp:param name="id" value="homeStoreCatalog" />
+		<dsp:param name="id" param="catalogId" />
 		<dsp:param name="elementName" value="catalog" />
 		<dsp:oparam name="output">
 			<dsp:setvalue bean="Profile.catalog" paramvalue="catalog" />
@@ -20,7 +20,7 @@
 		Product Display
 
 		<dsp:droplet name="/atg/commerce/catalog/CategoryLookup">
-			<dsp:param name="id" value="cat10022" />
+			<dsp:param name="id" param="itemId" />
 			<dsp:oparam name="output">
 				<dsp:valueof param="element.displayName" />
 				<dsp:droplet name="/atg/dynamo/droplet/ForEach">
@@ -35,6 +35,7 @@
 								<dsp:a href="<%=a24%>">
 									<dsp:valueof param="element.displayName" />
 									<dsp:param param="element.repositoryId" name="itemId" />
+									
 								</dsp:a>
 							</dsp:getvalueof>
 					</dsp:oparam>
@@ -51,13 +52,19 @@
 						<ul>
 					</dsp:oparam>
 					<dsp:oparam name="output">
+
 						<li><dsp:getvalueof id="a61" param="element.template.url"
 								idtype="java.lang.String">
 								<dsp:a href="display_sku.jsp">
 									<dsp:valueof param="element.displayName" />
+															
+									
 									<dsp:param param="element.repositoryId" name="itemId" />
+									<dsp:param name="catalogId" param="catalogId"/>
+									
 								</dsp:a>
 							</dsp:getvalueof>
+							<dsp:valueof param="element.longDescription" />
 					</dsp:oparam>
 					<dsp:oparam name="outputEnd">
 						</ul>

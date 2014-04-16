@@ -4,10 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DCS/lib/classes.jar"/>
-	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DPS/lib/classes.jar"/>
-	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DAS/lib/classes.jar"/>
-	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.0.3/DSS/lib/classes.jar"/>
 	<classpathentry kind="lib" path="lib/axis-ant.jar"/>
 	<classpathentry kind="lib" path="lib/axis.jar"/>
 	<classpathentry kind="lib" path="lib/classes.jar"/>
@@ -17,5 +13,9 @@
 	<classpathentry kind="lib" path="lib/servlet.jar"/>
 	<classpathentry kind="lib" path="lib/standard.jar"/>
 	<classpathentry kind="lib" path="lib/taglibs-datagrid.jar"/>
+	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.2/DCS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.2/DAS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.2/DPS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.2/DSS/lib/classes.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

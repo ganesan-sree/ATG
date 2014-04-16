@@ -20,9 +20,9 @@
 
 	    <div class="center_prod_box">    
 	         <div class="product_title">  
-	         	<dsp:a href="/ff/catalog/display_sku.jsp"><dsp:valueof param="data.auxiliaryData.catalogRef.displayName"/></dsp:a></div>
+	         	<dsp:a href="display_sku.jsp"><dsp:valueof param="data.auxiliaryData.catalogRef.displayName"/></dsp:a></div>
 				<div class="product_img">
-				  <dsp:a href="/ff/catalog/display_sku.jsp">
+				  <dsp:a href="display_sku.jsp">
 					<dsp:param name="product_id" param="data.auxiliaryData.catalogRef.repositoryId"/>
 					<img src="/ff/<dsp:valueof param="data.auxiliaryData.catalogRef.smallImage.url"/>" />
 				  </dsp:a>  

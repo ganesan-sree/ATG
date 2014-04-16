@@ -59,8 +59,7 @@
 											                 <div class="product_title">  <dsp:a href="#"><dsp:valueof param="element.displayName"/></dsp:a></div>
 											                 <div class="product_img">
 											                 	  <dsp:a href="#">
-																	<dsp:param name="product_id" param="element.repositoryId"/>
-																	
+																	<dsp:param name="product_id" param="element.repositoryId"/>																
 																	<img src="/my/<dsp:valueof param="element.smallImage.url"/>" />
 																  </dsp:a>  
 											                 </div>

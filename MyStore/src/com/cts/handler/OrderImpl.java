@@ -1,8 +1,14 @@
 package com.cts.handler;
 
+import atg.commerce.order.Order;
 import atg.commerce.order.OrderHolder;
 import atg.commerce.order.ShoppingCartFormHandler;
 import atg.commerce.order.purchase.CartModifierFormHandler;
+import atg.commerce.order.purchase.CreateCreditCardFormHandler;
+import atg.commerce.order.purchase.PaymentGroupDroplet;
+import atg.commerce.order.purchase.ShippingGroupDroplet;
+import atg.commerce.order.purchase.ShippingGroupFormHandler;
+import atg.commerce.pricing.AvailableShippingMethodsDroplet;
 import atg.service.pipeline.PipelineManager;
 import atg.service.pipeline.PipelineProcessor;
 import atg.service.pipeline.PipelineResult;
@@ -13,6 +19,24 @@ public class OrderImpl  extends OrderHolder{
 	CartModifierFormHandler c = new CartModifierFormHandler();
 	
 	PipelineManager man = new PipelineManager();
+	
+	ShoppingCartFormHandler s1= new ShoppingCartFormHandler();
+	
+	AvailableShippingMethodsDroplet aa= new AvailableShippingMethodsDroplet();
+	
+	PaymentGroupDroplet  pay = new PaymentGroupDroplet();
+	
+	ShippingGroupDroplet ship = new ShippingGroupDroplet();
+	
+	ShippingGroupFormHandler shipform= new ShippingGroupFormHandler();
+	
+	//.creditCard.CreditCardNumber
+	CreateCreditCardFormHandler credit= new CreateCreditCardFormHandler();
+	
+	OrderImpl or= new OrderImpl();
+	
+	
+	OrderHolder cart = new OrderHolder();
 	
 	PipelineProcessor pro= new PipelineProcessor() {
 		
