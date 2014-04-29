@@ -30,10 +30,7 @@ Java version: <%= System.getProperty("java.version") %><br>
 					</div>
 					<div class="register">
 						<a href="./account/register.jsp">Register</a>
-					</div>
-					<div class="register">
-						<a href="./user/newUser.jsp">NewRegister</a>
-					</div>
+					</div>			
 				</div>
 				</div>
 			</div>

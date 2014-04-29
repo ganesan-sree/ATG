@@ -6,7 +6,7 @@
 <%@ page import="atg.servlet.*"%>
 <dsp:page>
 
-
+<dsp:a bean="ProfileFormHandler.logout" type="submit" href="/my" value="submit" iclass="nav" >Logout</dsp:a>
 
 	<dsp:droplet name="/atg/commerce/catalog/custom/CatalogLookup">
 		<dsp:param name="id" value="eletronic" />
@@ -79,10 +79,45 @@
 	</ul>
 
 
+<h2>MyContent</h2>
+
+<dsp:droplet name="/atg/targeting/TargetingForEach">
+  <dsp:param bean="/atg/registry/RepositoryTargeters/MyContent" name="targeter"/>
+  <dsp:oparam name="output">
+    <dsp:getvalueof var="a7" param="element.URL" vartype="java.lang.String">
+      <dsp:a href="${a7}">
+        <dsp:valueof param="element.displayName"/>
+      </dsp:a>
+    </dsp:getvalueof>
+    <dsp:getvalueof id="img14" param="element.image"
+    idtype="java.lang.String">
+      <dsp:img src="${img14}"/>
+    </dsp:getvalueof>
+    <p>
+    <dsp:valueof param="element"/>
+  </dsp:oparam>
+</dsp:droplet>
 
 
 
+<h2>My/NameContent</h2>
 
 
+<dsp:droplet name="/atg/targeting/TargetingForEach">
+  <dsp:param bean="/atg/registry/RepositoryTargeters/My/NameContent" name="targeter"/>
+  <dsp:oparam name="output">
+    <dsp:getvalueof var="a7" param="element.address" vartype="java.lang.String">
+      <dsp:a href="${a7}">
+        <dsp:valueof param="element.name"/>
+      </dsp:a>
+    </dsp:getvalueof>
+    <dsp:getvalueof id="img14" param="element.image"
+    idtype="java.lang.String">
+      <dsp:img src="${img14}"/>
+    </dsp:getvalueof>
+    <p>
+    <dsp:valueof param="element"/>
+  </dsp:oparam>
+</dsp:droplet>
 
 </dsp:page>

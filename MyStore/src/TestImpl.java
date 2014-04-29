@@ -1,4 +1,4 @@
-package com.cts.handler;
+
 
 import atg.commerce.order.Order;
 import atg.commerce.order.OrderHolder;
@@ -12,8 +12,9 @@ import atg.commerce.pricing.AvailableShippingMethodsDroplet;
 import atg.service.pipeline.PipelineManager;
 import atg.service.pipeline.PipelineProcessor;
 import atg.service.pipeline.PipelineResult;
+import atg.userprofiling.ProfileFormHandler;
 
-public class OrderImpl  extends OrderHolder{
+public class TestImpl  extends OrderHolder{
 	ShoppingCartFormHandler s = new ShoppingCartFormHandler();
 	
 	CartModifierFormHandler c = new CartModifierFormHandler();
@@ -33,7 +34,7 @@ public class OrderImpl  extends OrderHolder{
 	//.creditCard.CreditCardNumber
 	CreateCreditCardFormHandler credit= new CreateCreditCardFormHandler();
 	
-	OrderImpl or= new OrderImpl();
+	atg.commerce.order.OrderImpl or= new atg.commerce.order.OrderImpl();
 	
 	
 	OrderHolder cart = new OrderHolder();
@@ -56,5 +57,8 @@ public class OrderImpl  extends OrderHolder{
 	
 	atg.commerce.order.OrderImpl impl = new atg.commerce.order.OrderImpl();
 	
+	
+	
+	ProfileFormHandler profile = new ProfileFormHandler();
 	
 }

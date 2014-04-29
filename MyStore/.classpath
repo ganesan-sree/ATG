@@ -17,5 +17,10 @@
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.2/DAS/lib/classes.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.2/DPS/lib/classes.jar"/>
 	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.2/DSS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.2/REST/lib/atg-rest-1.0.jar"/>
+	<classpathentry kind="lib" path="/home/ganesh/ATG/ATG10.2/REST/client-lib/java/atg-rest-client-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/atg-rest-client-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/org.json.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -104,8 +104,8 @@ to an order's line items.-->
               <dsp:oparam name="output">
                 <dsp:input bean="PaymentGroupFormHandler.listId" beanvalue="PaymentGroupFormHandler.listId" priority="<%=(int)9%>" type="hidden"/>
                 <dsp:input bean="PaymentGroupFormHandler.CurrentList[0].paymentMethod" paramvalue="key" type="hidden"/>
-            key Value    <dsp:valueof param="key"/> first Name = 
-                <dsp:valueof param="element.billingAddress.firstName"/>
+            key Value    <dsp:valueof param="key"/> <br/>
+            first Name =     <dsp:valueof param="element.billingAddress.firstName"/>
                 
                 <dsp:input bean="PaymentGroupFormHandler.applyPaymentGroups" type="submit" id="button" value="Bill Entire Order to this CreditCard"/>
                 

@@ -16,4 +16,16 @@
 		</table>
 	</item-descriptor>
 
+
+	<item-descriptor name="my_content">
+		<table name="MY_content_Target" type="primary" id-column-name="content_ID">
+			<property name="id" column-name="content_ID" />
+			<property name="name" column-name="displayNAME"   data-type="string"  />
+			<property name="image" column-name="image" data-type="string" />
+			<property name="description" column-name="description" data-type="string" />
+			<property name="altName" column-name="altName" data-type="string" />					
+		</table>	
+	</item-descriptor>
+
+
 </gsa-template>
