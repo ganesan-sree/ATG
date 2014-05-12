@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rest-security>
+  <resource component="/com/cts/rest/RestServices" secure="false">
+   <method name="doLogin" secure="false"/>  
+  </resource>
+</rest-security>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<actor-template default-chain-id="doLogin"
+	xsi:noNamespaceSchemaLocation="http://www.atg.com/xsds/actorChain_1.0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<actor-chain id="doLogin" transaction="TX_SUPPORTS">
+		<component id="MyProfileServices" name="/com/cts/rest/RestMVCServices"
+			method="doLogin" method-return-var="responseMap"
+			invoke-method-requires-session-confirmation="false">
+			<input name="name" class-name="java.lang.String" value="${param.name}" />
+			<output id="responseMap" name="responseMap" value="${responseMap}" />
+		</component>
+	</actor-chain>
+	<actor-chain id="doCreate" transaction="TX_SUPPORTS">
+		<component id="MyProfileServices" name="/com/cts/rest/RestMVCServices"
+			method="doCreate" method-return-var="responseMap"
+			invoke-method-requires-session-confirmation="false">
+			<input name="name" class-name="java.lang.String" value="${param.name}" />
+			<output id="responseMap" name="responseMap" value="${responseMap}" />
+		</component>
+	</actor-chain>
+	
+</actor-template>
+
+
+
+
+
+
+
+
+
+
