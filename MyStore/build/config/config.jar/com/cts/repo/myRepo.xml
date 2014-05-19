@@ -25,6 +25,12 @@
 			<property name="description" column-name="description" data-type="string" />
 			<property name="altName" column-name="altName" data-type="string" />					
 		</table>	
+		<property name="display" data-types="enumerated" >
+		<attribute name="useCodeForValue" value="false"/>
+			<option value="second" code="2"/>
+			<option value="third" code="3"/>
+			<option value="four" code="4"/>
+		</property>
 	</item-descriptor>
 
 
