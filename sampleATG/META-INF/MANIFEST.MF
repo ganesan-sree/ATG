@@ -1,0 +1,11 @@
+Manifest-Version:  1.0
+ATG-Product: sampleATG
+ATG-Version-Full: 10.0.3
+ATG-Required: DAS DPS DSS DCS
+ATG-Client-Class-Path: classes/classes.jar classes
+ATG-Class-Path: classes/classes.jar classes 
+ATG-Config-Path: config/ config1/ config/config.jar 
+ATG-Web-Module: j2ee-apps/sampleATG.war
+Name: classes
+ATG-Client-Update-File: true
+

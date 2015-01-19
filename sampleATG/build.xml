@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="sampleATG" default="deploy-ear-to-jboss" basedir=".">
+    <property environment="env" />
+
+    <property file="${user.name}.properties" />
+    <property file="build.properties" />
+
+    <!-- Define an if and else task for use in this definition -->
+    <taskdef name="if" classname="ise.antelope.tasks.IfTask" classpath="buildlib/atg-ant.jar" />
+    <taskdef name="else" classname="ise.antelope.tasks.ElseTask" classpath="buildlib/atg-ant.jar" />
+
+    <!-- The classpath for the project. -->
+    <path id="lib.classpath">
+        <fileset dir="lib">
+            <include name="**/*.jar" />
+            <include name="**/*.zip" />
+        </fileset>
+    </path>
+
+    <!-- The dynamo class path -->
+    <path id="dynamo.classpath">
+        <fileset dir="${dynamo.home}/../DAS/lib">
+            <include name="**/*.jar" />
+        </fileset>
+        <fileset dir="${dynamo.home}/../DAS-UI/lib">
+            <include name="**/*.jar" />
+        </fileset>
+        <fileset dir="${dynamo.home}/../DPS/lib">
+            <include name="**/*.jar" />
+        </fileset>
+        <fileset dir="${dynamo.home}/../DSS/lib">
+            <include name="**/*.jar" />
+        </fileset>
+        <fileset dir="${dynamo.home}/../DCS/lib">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+
+    <!-- Other things to watch for in the classpath -->
+    <patternset id="resource.files">
+        <include name="**/*.properties" />
+        <include name="**/*.xml" />
+        <include name="**/*.dtd" />
+    </patternset>
+
+    <!-- This target builds the module, assembles the ear, and deploys it to JBoss. -->
+    <target name="deploy-ear-to-jboss" depends="-init, clean, build-module, -execute-assembler-cmd" description="builds the module, assembles the ear, and deploys it to JBoss" />
+
+    <!-- This target will copy over the files within the j2ee apps to the live EAR in JBoss for incremental deployments of changed jsps, etc... -->
+    <target name="dev-deploy-wars" depends="-init" description="Copies the J2EE application for the module">
+            <echo message="Install To:   = ${jboss.home}/server/${jboss.server}/deploy/${module.name}.ear" />
+            <echo message="Install From: = j2ee-apps" />
+
+            <copy description="Copying j2ee files to deployment" todir="${jboss.home}/server/${jboss.server}/deploy/${module.name}.ear" verbose="${copy.verbose.bool}">
+                <fileset dir="j2ee-apps">
+                    <exclude name="META-INF/*.*" />
+                    <exclude name="WEB-INF/*.*" />
+                </fileset>
+            </copy>
+        </target>
+
+    <!-- Deletes the build and install directories. -->
+    <target name="clean" depends="-init" description="Deletes the contents of the install and build directories.">
+        <echo message="Deleting:" />
+        <echo message="  ${jboss.home}/server/${jboss.server}/deploy/${module.name}.ear" />
+        <echo message="  ${install.dir}" />
+        <echo message="  build" />
+        <delete failonerror="false" includeEmptyDirs="true">
+            <fileset dir="${jboss.home}/server/${jboss.server}/deploy/${module.name}.ear" />
+            <fileset dir="${install.dir}" />
+            <fileset dir="build" />
+        </delete>
+    </target>
+
+    <!-- This target builds the ATG module. -->
+    <target name="build-module" depends="-init, compile, -jar" description="">
+        <echo message="Building module at ${install.dir}." />
+        <mkdir dir="${install.dir}/META-INF" />
+        <copy todir="${install.dir}/META-INF" file="META-INF/MANIFEST.MF" />
+
+        <mkdir dir="${install.dir}/lib" />
+        <copy todir="${install.dir}/lib">
+            <fileset dir="lib" />
+        </copy>
+
+        <mkdir dir="${install.dir}/classes" />
+        <copy todir="${install.dir}/classes">
+            <fileset dir="build/classes" />
+        </copy>
+
+        <mkdir dir="${install.dir}/config" />
+        <copy todir="${install.dir}/config">
+            <fileset dir="build/config" />
+        </copy>
+
+        <mkdir dir="${install.dir}/j2ee-apps" />
+        <copy todir="${install.dir}/j2ee-apps">
+            <fileset dir="j2ee-apps" />
+        </copy>
+    
+        <echo message="Module built." />
+    </target>
+
+    <!-- Compiles the codebase -->
+    <target name="compile" depends="-init,-createdirs" description="Compiles the source code to the classes directory.">
+        <mkdir dir="classes" />
+
+        <javac srcdir="src" destdir="classes" debug="true" deprecation="false" optimize="false" source="1.6" target="1.6" verbose="${javac.verbose.bool}">
+            <classpath path="${classpath}" />
+            <classpath refid="lib.classpath" />
+            <classpath refid="dynamo.classpath" />
+            <include name="**/*.java" />
+        </javac>
+        <!-- copy java resource files to build directory -->
+        <copy todir="classes">
+            <fileset dir="src/">
+                <patternset refid="resource.files" />
+            </fileset>
+        </copy>
+    </target>
+
+    <!-- Jars the classes and config files, and copies the associated lib files. -->
+    <target name="-jarclasses" depends="-createdirs" description="jars classes and source to build directory.">
+        <if name="jar.configs.and.classes" value="true">
+            <echo message="Jarring up class files" />
+            <!-- Jar up the classes files -->
+            <jar jarfile="build/classes/classes.jar" basedir="classes/" includes="**" />
+            <else>
+                <!-- Not supposed to jar up the class files just copy them to a directory with the name classes.jar -->
+                <echo message="Using exploded class files" />
+                <mkdir dir="build/classes/classes.jar" />
+                <copy todir="build/classes/classes.jar">
+                    <fileset dir="classes" />
+                </copy>
+            </else>
+        </if>
+
+        <zip zipfile="build/src.zip" basedir="src/" includes="**" />
+    </target>
+
+    <!-- Jars the classes and config files, and copies the associated lib files. -->
+    <target name="-jarconfig" depends="-createdirs" description="jars config files to build directory.">
+    	        <if name="jar.configs.and.classes" value="true">
+            <echo message="Jarring up config files" />
+            <!-- Jar up the config files -->
+            <jar jarfile="build/config/config.jar" basedir="config/" includes="**" />
+            <else>
+                <!-- Not supposed to jar up the config files just copy them to a directory with the name config.jar -->
+                <echo message="Using exploded config files" />
+                <mkdir dir="build/config/config.jar" />
+                <copy todir="build/config/config.jar">
+                    <fileset dir="config" />
+                </copy>
+            </else>
+        </if>
+    </target>
+	
+    <target name="-jar" depends="-createdirs,-jarclasses,-jarconfig" description="creates build directories, jars classes and configuration">
+    </target>
+
+    <!-- This target uses the runAssembler command to build the assembled ear and deploy it to JBoss. -->
+    <target name="-execute-assembler-cmd" description="Executes ATG's runAssembler by command line call">
+        <!-- Configure various arguments to pass to runAssembler depending upon ANT properties set by the user. -->
+        <if name="liveconfig" value="true">
+            <property name="assemble.cmd.liveconfig" value="-liveconfig" />
+            <else>
+                <property name="assemble.cmd.liveconfig" value="" />
+            </else>
+        </if>
+        <if name="standalone" value="true">
+            <property name="assemble.cmd.standalone" value="-standalone" />
+            <else>
+                <property name="assemble.cmd.standalone" value="" />
+            </else>
+        </if>
+        <if name="omitlicenses" value="true">
+            <property name="assemble.cmd.omitlicenses" value="-omit-licenses" />
+            <else>
+                <property name="assemble.cmd.omitlicenses" value="" />
+            </else>
+        </if>
+        <if name="pack" value="true">
+            <property name="assemble.cmd.pack" value="-pack" />
+            <else>
+                <property name="assemble.cmd.pack" value="" />
+            </else>
+        </if>
+        <if name="dynamo.server.name" value="">
+            <property name="assemble.cmd.servername" value="" />
+            <else>
+                <property name="assemble.cmd.servername" value="-server ${dynamo.server.name}" />
+            </else>
+        </if>
+        <if name="include.admin" value="true">
+            <property name="assemble.cmd.modules" value="${include.modules} DafEar.Admin ${module.name}" />
+            <else>
+                <property name="assemble.cmd.modules" value="${include.modules} ${module.name}" />
+            </else>
+        </if>
+
+        <echo message="Invoking RunAssembler Command" />
+        <echo message="assemble.cmd.omitlicenses=${assemble.cmd.omitlicenses}" />
+        <echo message="assemble.cmd.standalone=${assemble.cmd.standalone}" />
+        <echo message="assemble.cmd.pack=${assemble.cmd.pack}" />
+        <echo message="assemble.cmd.servername=${assemble.cmd.servername}" />
+        <echo message="assemble.cmd.modules=${assemble.cmd.modules}" />
+        <echo message=" " />
+
+    	<echo message="@@@@@@@@@@@@@@@@@@  == ${dynamo.home}" />
+    	
+        <!-- The syntax of the run assembler command is:runAssembler [options] output-file-name -m module-list -->
+        <exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/runAssembler" failonerror="yes">
+            <arg value="-overwrite" />
+            <arg value="${assemble.cmd.omitlicenses}" />
+            <arg value="${assemble.cmd.standalone}" />
+            <arg value="${assemble.cmd.pack}" />
+            <arg line="${assemble.cmd.servername}" />
+            <arg value="${jboss.home}/server/${jboss.server}/deploy/${module.name}.ear" />
+            <arg line="-m ${assemble.cmd.modules}" />
+           
+        </exec>
+    </target>
+
+    <!-- Create the directories used in the build process. Not intended to be used publically.-->
+    <target name="-createdirs">
+        <mkdir dir="build" />
+        <mkdir dir="build/config" />
+        <mkdir dir="build/classes" />
+    </target>
+
+    <!-- Initializes the build.  This target is not public, but should be called by all the others. -->
+    <target name="-init">
+        <!-- Create the timestamp -->
+        <tstamp />
+        <echo message="" />
+        <echo message="" />
+        <echo message="#############################################################################" />
+        <echo message="#############################################################################" />
+        <echo message="${module.name}: start date = ${DSTAMP}  start time = ${TSTAMP}" />
+        <echo message="JAVA_HOME       = ${env.JAVA_HOME}" />
+        <echo message="dynamo.home     = ${dynamo.home}" />
+        <echo message="dynamo.root.dir = ${dynamo.root.dir}" />
+        <echo message="jboss.home      = ${jboss.home}" />
+        <echo message="#############################################################################" />
+        <echo message="#############################################################################" />
+        <echo message="" />
+        <echo message="" />
+    </target>
+</project>

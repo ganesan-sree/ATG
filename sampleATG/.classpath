@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="lib/commons-codec.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/servlet.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/standard.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DCS-UI/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/Agent/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/AssetUI/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/CAF10.2/CAF/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/CSC10.2/DCS-CSR/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DAF/Search/Base/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DAF/Search/Index/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DAF/Search/LiveIndex/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DAF/Search/Query/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DAS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/BCC/lib/classes.jar" sourcepath="C:/ATG/ATG10.2/BCC/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DCS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DPS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DSS/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/Publishing/base/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/Service10.2/Service/Framework/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/WebUI/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DAS/lib/resources.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DCS/lib/resources.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DPS/lib/resources.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DSS/lib/resources.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/Ticketing/lib/ticketing.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DAS-UI/lib/uiclasses.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DAS-UI/lib/uiresources.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DAS-UI/lib/jhall.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DAS/lib/ice.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/Service10.2/Service/Framework/Agent/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/Service10.2/Service/Framework/UI/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/Service10.2/Service/Response/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/Service10.2/Service/Ticketing/lib/classes.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/Service-UI10.2/Service-UI/Framework/Agent/lib/classes.jar"/>
+</classpath>

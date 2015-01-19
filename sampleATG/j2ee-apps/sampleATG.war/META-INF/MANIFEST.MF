@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+ATG-Module-Uri: sampleATG.war
+ATG-Context-Root: /sampleATG
+ATG-Module-Version: sampleATG.war
+ATG-Required:DCS
