@@ -8,7 +8,7 @@
 <title>Global testing page</title>
 </head>
 <body>
-<dsp:importbean bean="/com/easymed/UserHandler" />
+<dsp:importbean bean="/com/bean/handler/UserHandler" />
 
 	<div id="global">
 		<h3>Global Property validation</h3>
