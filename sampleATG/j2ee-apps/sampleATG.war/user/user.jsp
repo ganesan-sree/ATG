@@ -6,7 +6,7 @@
 </HEAD>
 <BODY>
 
-<dsp:importbean bean="/com/easymed/UserHandler" /> 
+<dsp:importbean bean="/com/bean/handler/UserHandler" />
    <dsp:form  method="post">
       <dsp:input bean="UserHandler.successURL" type="hidden"
       value="../index.jsp"/>
