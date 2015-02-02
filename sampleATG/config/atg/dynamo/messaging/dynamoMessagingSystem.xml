@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dynamo-message-system>
+	<patchbay>
+		<message-source>
+			<nucleus-name>
+				/atg/dynamo/messaging/ECCRMessageSource
+			</nucleus-name>
+			<output-port>
+				<port-name>DEFAULT</port-name>
+				<output-destination>
+					<provider-name>local</provider-name>
+					<destination-name>localdms:/local/MyApp/eccr7
+					</destination-name>
+					<destination-type>Queue</destination-type>
+				</output-destination>
+			</output-port>
+
+		</message-source>
+
+
+
+		<message-sink>
+			<nucleus-name>
+				/atg/dynamo/messaging/ECCRMessageSink
+			</nucleus-name>
+			<input-port>
+				<port-name>DEFAULT</port-name>
+				<input-destination>
+					<provider-name>local</provider-name>
+					<destination-name>localdms:/local/MyApp/eccr7</destination-name>
+					<destination-type>Queue</destination-type>
+				</input-destination>
+			</input-port>
+		</message-sink>
+
+	</patchbay>
+
+
+	<local-jms>
+		<queue-name>/MyApp/eccr7</queue-name>
+	</local-jms>
+
+
+</dynamo-message-system>

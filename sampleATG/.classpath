@@ -11,7 +11,6 @@
 	<classpathentry kind="lib" path="lib/commons-codec.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/servlet.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/standard.jar"/>
-	<classpathentry kind="output" path="build/classes"/>
 	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DCS-UI/lib/classes.jar"/>
 	<classpathentry kind="lib" path="C:/ATG/ATG10.2/Agent/lib/classes.jar"/>
 	<classpathentry kind="lib" path="C:/ATG/ATG10.2/AssetUI/lib/classes.jar"/>
@@ -21,7 +20,6 @@
 	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DAF/Search/Index/lib/classes.jar"/>
 	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DAF/Search/LiveIndex/lib/classes.jar"/>
 	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DAF/Search/Query/lib/classes.jar"/>
-	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DAS/lib/classes.jar"/>
 	<classpathentry kind="lib" path="C:/ATG/ATG10.2/BCC/lib/classes.jar" sourcepath="C:/ATG/ATG10.2/BCC/lib/classes.jar"/>
 	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DCS/lib/classes.jar"/>
 	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DPS/lib/classes.jar"/>
@@ -43,4 +41,14 @@
 	<classpathentry kind="lib" path="C:/ATG/ATG10.2/Service10.2/Service/Response/lib/classes.jar"/>
 	<classpathentry kind="lib" path="C:/ATG/ATG10.2/Service10.2/Service/Ticketing/lib/classes.jar"/>
 	<classpathentry kind="lib" path="C:/ATG/ATG10.2/Service-UI10.2/Service-UI/Framework/Agent/lib/classes.jar"/>
+	<classpathentry kind="lib" path="lib/javax.jms.jar"/>
+	<classpathentry kind="lib" path="C:/jboss-eap-5.1/jboss-as/common/lib/jnpserver.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-logging.jar"/>
+	<classpathentry kind="lib" path="C:/jboss-eap-5.1/jboss-as/common/lib/jboss-messaging.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-aop.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-remoting.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-4.0-common-client.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-aop-client.jar"/>
+	<classpathentry kind="lib" path="C:/ATG/ATG10.2/DAS/lib/classes.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
 </classpath>

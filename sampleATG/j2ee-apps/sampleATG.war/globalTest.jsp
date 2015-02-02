@@ -8,20 +8,15 @@
 <title>Global testing page</title>
 </head>
 <body>
-<dsp:importbean bean="/com/bean/handler/UserHandler" />
+<dsp:importbean bean="/com/bean/droplet/test" />
 
-	<div id="global">
-		<h3>Global Property validation</h3>
-		<dsp:form method="post">
-			<dsp:input bean="UserHandler.successURL" type="hidden"
-				value="globalTest.jsp" />
-			<dsp:input bean="UserHandler.errorURL" type="hidden"
-				value="../genericError.jsp" />
-						
-			<dsp:input bean="UserHandler.global" type="submit"
-				value="Global Varible" />
-		</dsp:form>
-	</div>
+<dsp:droplet name="test">
+	
+	<dsp:oparam name="true">
+		
+	</dsp:oparam>
+</dsp:droplet>
+
 	
 </body>
 </html>
