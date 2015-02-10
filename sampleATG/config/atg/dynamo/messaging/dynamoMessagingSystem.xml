@@ -32,6 +32,24 @@
 				</input-destination>
 			</input-port>
 		</message-sink>
+		
+		
+		
+		
+		<message-sink>
+			<nucleus-name>
+				/atg/dynamo/messaging/ECCREndSessionEvents
+			</nucleus-name>
+		
+			<input-port>	
+				<port-name>EndSession</port-name>
+				<input-destination>
+					<provider-name>local</provider-name>
+					<destination-name>localdms:/local/DPSTopic/EndSessionEvents</destination-name>
+					<destination-type>Topic</destination-type>
+				</input-destination>
+			</input-port>
+		</message-sink>
 
 	</patchbay>
 

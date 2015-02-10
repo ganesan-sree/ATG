@@ -93,6 +93,10 @@
 	<!-- Use the DSP Tag library in your jsp pages -->
 
 	<!-- -->
+	
+<session-config>
+	<session-timeout>1</session-timeout>
+</session-config>
 
 	<jsp-config>
 		<taglib>
@@ -115,3 +119,4 @@
 
 
 </web-app>
+
