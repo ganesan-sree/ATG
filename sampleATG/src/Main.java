@@ -10,6 +10,7 @@ public class Main {
 		ExecutorService executor = Executors.newSingleThreadExecutor();
 		executor.invokeAll(Arrays.asList(new Task()), 10, TimeUnit.MINUTES); 
 		executor.shutdown();
+		
 	}
 
 }

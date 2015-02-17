@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+	<xs:element name="interaction">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="sessionID" minOccurs="1" />
+				<xs:element type="xs:string" name="sourceInteractionId"
+					minOccurs="1" />
+				<xs:element type="xs:string" name="channelType"
+					minOccurs="1" />
+				<xs:element type="xs:string" name="systemID" minOccurs="1" />
+				<xs:element type="xs:string" name="clientChannelID"
+					minOccurs="1" />
+				<xs:element type="xs:string" name="corporateChannelID"
+					minOccurs="1" />
+				<xs:element type="xs:string" name="sessionStartTime"
+					minOccurs="1" />
+				<xs:element type="xs:string" name="sessionEndTime"
+					minOccurs="1" />
+				<xs:element type="xs:string" name="sessionInitiatior"
+					minOccurs="1" />
+				<xs:element name="memberPartyIdLevel_01" minOccurs="1">
+					   <xs:complexType mixed="true" >
+					  		 <xs:attribute type="DecryptionValues" name="decrypt" use="optional"/>
+					   </xs:complexType>
+				</xs:element>
+				<xs:element name="memberPartyIdLevel_02" minOccurs="1">
+					   <xs:complexType mixed="true" >
+					  		 <xs:attribute type="DecryptionValues" name="decrypt" use="optional"/>
+					   </xs:complexType>
+				</xs:element>
+				<xs:element name="memberPartyIdLevel_03" minOccurs="1">
+					   <xs:complexType mixed="true" >
+					  		 <xs:attribute type="DecryptionValues" name="decrypt" use="optional"/>
+					   </xs:complexType>
+				</xs:element>
+				<xs:element name="memberPartyIdLevel_04" minOccurs="1">
+					   <xs:complexType mixed="true" >
+					  		 <xs:attribute type="DecryptionValues" name="decrypt" use="optional"/>
+					   </xs:complexType>
+				</xs:element>
+				<xs:element name="memberPartyIdLevel_05" minOccurs="1">
+					   <xs:complexType mixed="true" >
+					  		 <xs:attribute type="DecryptionValues" name="decrypt" use="optional"/>
+					   </xs:complexType>
+				</xs:element>
+				<xs:element name="memberPartySourceID" minOccurs="1" type="xs:string"/>
+				<xs:element type="xs:string" name="sessionInitStatus"
+					minOccurs="1" />
+				<xs:element type="xs:string" name="serviceID" minOccurs="1" />
+				<xs:element type="xs:short" name="interactionType"
+					minOccurs="1" />
+				<xs:element type="xs:string" name="interactionStartTimestamp"
+					minOccurs="1" />
+				<xs:element type="xs:string" name="interactionEndTimestamp"
+					minOccurs="1" />
+				<xs:element type="xs:string" name="interationResult"
+					minOccurs="1" />
+				<xs:element type="xs:string" name="agentID" minOccurs="1" />
+				<xs:element type="xs:string" name="customerExperienceType"
+					minOccurs="1" />
+				<xs:element type="xs:string" name="memberPartyRelationship"
+					minOccurs="1" />
+				<xs:element type="xs:string" name="updatedTimpstamp"
+					minOccurs="1" />
+				<xs:element type="xs:string" name="sessionInitParty"
+					minOccurs="1" />
+
+				<xs:element ref="transInteraction" />
+				<xs:element ref="memberInteraction" />
+				<xs:element ref="interactionData" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	
+	<!-- definition of complex elements -->
+	<xs:element name="transInteraction">
+		<xs:complexType mixed="true">
+			<xs:sequence>
+				<xs:element name="trans_interaction">
+					<xs:complexType mixed="true">
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="trans">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:byte" name="trans_seq_no"
+											minOccurs="1" />
+										<xs:element type="xs:string" name="ref_source_key_id"
+											minOccurs="1" />
+										<xs:element type="xs:string" name="ref_key_id"
+											minOccurs="1" />
+										<xs:element name="ref_key" minOccurs="1">
+											   <xs:complexType mixed="true" >
+											  		 <xs:attribute type="DecryptionValues" name="decrypt" use="optional"/>
+											   </xs:complexType>
+										</xs:element>	
+										<xs:element ref="TRNXS_DTL" minOccurs="0"
+											maxOccurs="unbounded" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+
+
+	<xs:element name="TRNXS_DTL">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TRNX_ITEM" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+			<xs:attribute type="xs:byte" name="transactionSeq" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="TRNX_ITEM">
+		<xs:complexType>
+			<xs:attribute type="xs:byte" name="sequence" use="required" />
+			<xs:attribute type="xs:string" name="name" use="required" />
+			<xs:attribute type="xs:string" name="value" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="memberInteraction">
+		<xs:complexType mixed="true">
+			<xs:sequence>
+				<xs:element name="member_interaction">
+					<xs:complexType mixed="true">
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="trans">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:byte" name="trans_seq_no"
+											minOccurs="1" />
+										<xs:element type="xs:byte" name="member_seq_no"
+											minOccurs="1" />
+										<xs:element type="xs:string" name="member_source_id"
+											minOccurs="1" />
+										<xs:element name="member_id_lvl_1" minOccurs="1">
+											   <xs:complexType mixed="true" >
+											  		 <xs:attribute type="DecryptionValues" name="decrypt" use="optional"/>
+											   </xs:complexType>
+										</xs:element>	
+										<xs:element name="member_id_lvl_2" minOccurs="1">
+											   <xs:complexType mixed="true" >
+											  		 <xs:attribute type="DecryptionValues" name="decrypt" use="optional"/>
+											   </xs:complexType>
+										</xs:element>
+										<xs:element name="member_id_lvl_3" minOccurs="1">
+											   <xs:complexType mixed="true" >
+											  		 <xs:attribute type="DecryptionValues" name="decrypt" use="optional"/>
+											   </xs:complexType>
+										</xs:element>
+										<xs:element name="member_id_lvl_4" minOccurs="1">
+											   <xs:complexType mixed="true" >
+											  		 <xs:attribute type="DecryptionValues" name="decrypt" use="optional"/>
+											   </xs:complexType>
+										</xs:element>
+										<xs:element name="member_id_lvl_5" minOccurs="1">
+											   <xs:complexType mixed="true" >
+											  		 <xs:attribute type="DecryptionValues" name="decrypt" use="optional"/>
+											   </xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:element name="interactionData">
+		<xs:complexType mixed="true">
+			<xs:sequence>
+				<xs:element name="trans" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType mixed="true">
+						<xs:sequence>
+							<xs:element type="xs:string" name="key" minOccurs="1" />
+							<xs:element name="value" minOccurs="1">
+											   <xs:complexType mixed="true" >
+											  		 <xs:attribute type="DecryptionValues" name="decrypt" use="optional"/>
+											   </xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:simpleType name="DecryptionValues">
+	  <xs:restriction base="xs:string">
+	    <xs:enumeration value="yes"/>
+	    <xs:enumeration value="no"/>
+	  </xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

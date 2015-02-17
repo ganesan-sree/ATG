@@ -1,0 +1,7 @@
+<root>
+  <facet id="jpt.jaxb">
+    <node name="classgen">
+      <attribute name="package" value="cvs.eccr.bean"/>
+    </node>
+  </facet>
+</root>
