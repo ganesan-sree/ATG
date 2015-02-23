@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gsa-template xml-combine="append">
+
+    <header>
+        <name>My Profile</name>
+        <author>TCS</author>
+        <version>$Id: $</version>
+    </header>
+
+    <item-descriptor name="user" item-expire-timeout="180000" item-cache-size="2000">
+
+
+
+	<table name="cts_rec_viewed" type="multi" id-column-name="user_id"
+		multi-column-name="sequence_id">
+		<property name="recentlyViewedProducts" column-name="rec_viewed_prod"
+			cascade="update,delete" data-type="list" component-item-type="recentlyViewedProduct"
+			display-name-resource="recentlyViewedProducts" category-resource="categoryCommerceBehaviorTracking">
+		</property>
+	</table>
+    
+     </item-descriptor>
+     
+  
+
+
+  <item-descriptor name="recentlyViewedProduct" item-cache-size="1000" query-cache-size="1000" display-name-resource="itemDescriptorRecentlyViewedProduct">   
+    <table name="cts_rec_viewed_prod" type="primary" id-column-name="id">
+      <property name="id" data-type="string" column-name="id" display-name-resource="recently-viewed-prod-id"/>
+      <property name="product" repository="/atg/commerce/catalog/ProductCatalog" item-type="product" column-name="product_id" category-resource="categoryBasics" display-name-resource="product"/>
+      <property name="siteId" data-type="string" column-name="site_id" category-resource="categoryBasics" display-name-resource="siteId"/>
+      <property name="timestamp" data-type="timestamp" column-name="time_stamp" category-resource="categoryBasics" display-name-resource="timestamp"/>
+    </table>
+  </item-descriptor>
+  
+
+</gsa-template>
+ 

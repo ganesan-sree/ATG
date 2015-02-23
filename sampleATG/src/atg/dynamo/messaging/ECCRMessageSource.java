@@ -4,8 +4,9 @@ import javax.jms.JMSException;
 import javax.jms.TextMessage;
 
 import atg.dms.patchbay.MessageSourceContext;
+import atg.servlet.DynamoServlet;
 
-public class ECCRMessageSource implements atg.dms.patchbay.MessageSource {
+public class ECCRMessageSource extends  DynamoServlet implements atg.dms.patchbay.MessageSource {
 
 	private boolean mStarted;
 	private MessageSourceContext mContext;
@@ -27,6 +28,17 @@ public class ECCRMessageSource implements atg.dms.patchbay.MessageSource {
 	public void stopMessageSource() {
 		mStarted = false;
 
+	}
+	
+	
+	
+
+	public MessageSourceContext getmContext() {
+		return mContext;
+	}
+
+	public void setmContext(MessageSourceContext mContext) {
+		this.mContext = mContext;
 	}
 
 	// This method will send a message

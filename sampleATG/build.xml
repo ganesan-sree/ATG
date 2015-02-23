@@ -2,7 +2,7 @@
 <project name="sampleATG" default="deploy-ear-to-jboss" basedir=".">
 	<property environment="env" />
 
-	<property file="${user.name}.properties" />
+	<property file="ganesh.properties" />
 	<property file="build.properties" />
 
 	<!-- Define an if and else task for use in this definition -->
