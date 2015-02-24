@@ -22,3 +22,29 @@ create table cts_rec_viewed (
 	sequence_id	integer	not null,
 	rec_viewed_prod	varchar2(40)	not null
 ,constraint crs_rec_viewed_p primary key (user_id,sequence_id));
+
+
+
+
+
+
+
+
+create table cts_points (
+	points_id	varchar2(40)	not null,
+	available	number	(10),
+	reserved	number	(10),
+constraint cts_points primary key (points_id));
+
+
+create table cts_user_points (
+user_id	varchar2(40)	not null,
+points_id	varchar2(40)	not null);
+
+
+
+
+create table cts_points_pg (
+payment_group_id	varchar2(40)	not null,
+points_item_id	varchar2(40)	not null,	
+constraint cts_points_pg primary key (payment_group_id));
