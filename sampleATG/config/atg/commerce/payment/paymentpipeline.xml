@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE pipelinemanager
+	PUBLIC "-//Art Technology Group, Inc.//DTD Dynamo Pipeline Manager//EN"
+	'http://www.atg.com/dtds/pipelinemanager/pipelinemanager_1.0.dtd'>
+
+<pipelinemanager>
+
+<!-- This chain is used to process a credit card payment group -->
+<!-- This single chain knows how to auth/credit/debit a        -->
+<!-- payment group.  It also creates the CreditCardInfo object -->
+<!-- that is used by the CreditCardProcessor to perform an     -->
+<!-- auth/debit/credit.                                        -->
+<!-- This chain gets invoked from the PaymentManager.          -->
+
+<pipelinechain name="pointsPaymentProcessorChain" transaction="TX_REQUIRED" headlink="processPointsPayment">
+  <pipelinelink name="processPointsPayment" transaction="TX_MANDATORY">
+    <processor jndi="/com/mystore/order/processor/ProcessPointsPayment"/>
+  </pipelinelink>
+</pipelinechain>
+
+
+
+</pipelinemanager>
+

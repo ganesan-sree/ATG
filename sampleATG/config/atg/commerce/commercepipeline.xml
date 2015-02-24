@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE pipelinemanager
+        PUBLIC "-//Art Technology Group, Inc.//DTD Dynamo Pipeline Manager//EN"
+        'http://www.atg.com/dtds/pipelinemanager/pipelinemanager_1.0.dtd'>
+
+
+<!-- This commerce pipeline configuration file defines the -->
+<!-- chains used for B2C commerce applications. -->
+
+<pipelinemanager xml-combine="append">
+
+	<pipelinechain resultclassname="atg.service.pipeline.PipelineResultImpl"
+		transaction="TX_REQUIRED" classname="atg.service.pipeline.PipelineChain"
+		name="validatePaymentGroup" headlink="dispatchOnPGType">
+
+		<pipelinelink transaction="TX_MANDATORY" name="dispatchOnPGType">
+			<processor jndi="/atg/commerce/order/processor/ValidatePaymentGroupByType" />
+			<transition returnvalue="6000" link="validatePointsPG" />
+		</pipelinelink>
+
+		<pipelinelink transaction="TX_MANDATORY" name="validatePointsPG">
+			<processor jndi="/com/mystore/order/processor/ValidatePointsPaymentGroup" />
+		</pipelinelink>
+
+	</pipelinechain>
+
+	<pipelinechain resultclassname="atg.service.pipeline.PipelineResultImpl"
+		transaction="TX_REQUIRED" classname="atg.service.pipeline.PipelineChain"
+		name="validatePaymentGroupPreConfirmation" headlink="dispatchOnPGTypePreConfirmation" >
+		
+		
+		<pipelinelink transaction="TX_MANDATORY"
+			name="dispatchOnPGTypePreConfirmation">
+			<processor jndi="/atg/commerce/order/processor/ValidatePaymentGroupByType" />
+			<transition returnvalue="6000" link="validatePointsPGPreConfirmation" />
+		</pipelinelink>
+
+		<pipelinelink transaction="TX_MANDATORY"
+			name="validatePointsPGPreConfirmation">
+			<processor jndi="/com/mystore/order/processor/ValidatePointsPaymentGroup" />
+		</pipelinelink>
+
+	</pipelinechain>
+
+</pipelinemanager>
+

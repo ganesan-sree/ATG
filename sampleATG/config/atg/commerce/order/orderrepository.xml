@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template
+        PUBLIC "-//Art Technology Group, Isnc.//DTD General SQL Adapter//EN"
+        "http://www.atg.com/dtds/gsa/gsa_1.0.dtd" >
+
+<gsa-template xml-combine="append">
+
+<header xml-combine="replace">
+    <name>My Commerce Item</name>
+    <author>Ganesan S</author>
+    <version>$Id  0000001$</version>
+ </header>
+
+	<item-descriptor   name="paymentGroup" xml-combine="append" >    
+	 <table name="dcspp_pay_group" id-column-name="payment_group_id" type="primary" shared-table-sequence="1">  
+      <property   data-type="enumerated"  name="type"   xml-combine="append" >        
+        <option value="pointsPaymentGroup" code="300"/>        
+     </property>
+     </table>
+	</item-descriptor>
+	
+	
+	<item-descriptor super-type="paymentGroup" cache-mode="simple" item-cache-timeout="180000"  name="pointsPaymentGroup">	
+    <table name="cts_points_pg" id-column-name="payment_group_id" type="auxiliary">    
+      <property  item-type="points"  name="pointsItem" repository="/atg/userprofiling/ProfileAdapterRepository">        
+      </property>          
+    </table>
+
+ 
+  </item-descriptor>
+	
+</gsa-template>
