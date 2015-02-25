@@ -25,6 +25,7 @@ public class MyStoreProcProcessPointsPayment extends ProcProcessPaymentGroup{
 
 		Order order = arg0.getOrder();
 
+		
 		String profileId = order.getProfileId();
 		System.out.println(profileId);
 
