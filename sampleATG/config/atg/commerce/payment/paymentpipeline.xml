@@ -19,6 +19,19 @@
 </pipelinechain>
 
 
+<pipelinechain name="creditCardProcessorChain" transaction="TX_REQUIRED"  >
+
+  <pipelinelink name="processCreditCard" transaction="TX_MANDATORY">
+    <processor jndi="/atg/commerce/payment/processor/ProcessCreditCard"/>
+    <transition returnvalue="1" link="awardPoints"/>
+  </pipelinelink>
+  
+  <pipelinelink name="awardPoints" transaction="TX_MANDATORY">
+    <processor jndi="/com/mystore/payment/processor/AwardPoints"/>   
+  </pipelinelink>
+  
+</pipelinechain>
+
 
 </pipelinemanager>
 
