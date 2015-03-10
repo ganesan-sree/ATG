@@ -1,5 +1,7 @@
 package com.mystore.order.processor;
 
+import java.util.Date;
+
 import atg.commerce.CommerceException;
 import atg.commerce.order.Order;
 import atg.commerce.payment.PaymentManagerPipelineArgs;
@@ -20,31 +22,51 @@ public class MyStoreProcProcessPointsPayment extends ProcProcessPaymentGroup{
 	public PaymentStatus authorizePaymentGroup(PaymentManagerPipelineArgs arg0)
 			throws CommerceException {
 
-		System.out.println(arg0.getAmount());
-		System.out.println(arg0.getOrder());
-
+				System.out.println("MyStoreProcProcessPointsPayment======================\n\n\nauthorizePaymentGroup=="+ arg0.getAmount());
+				
 		Order order = arg0.getOrder();
-
-		
 		String profileId = order.getProfileId();
 		System.out.println(profileId);
-
-		// profileRepository.ge
 		
+		double amount=arg0.getAmount();
+
 		try {
-			MutableRepositoryItem userItem = getProfileRepository().getItemForUpdate(profileId, "user");
+			RepositoryItem userItem = getProfileRepository().getItem(profileId, "user");			
+			RepositoryItem pointItem =(RepositoryItem) userItem.getPropertyValue("points");
+			MutableRepositoryItem pointItemMut =(MutableRepositoryItem) userItem.getPropertyValue("points");
+			Integer availableBalance=0;
+			Integer reservedBalance=0;
 			
-			System.out.println(userItem);
-			userItem.getRepository().getItem("reservedBalance");
-			userItem.getRepository().getItem("availableBalance");
+						if (pointItem != null)
+							{
+								availableBalance = (Integer) pointItem.getPropertyValue("availableBalance");
+								reservedBalance = (Integer) pointItem.getPropertyValue("reservedBalance");
+							}
+			 
 			
+			if(reservedBalance==null){
+				reservedBalance=0;
+			}
 			
-		} catch (RepositoryException e) {
-			// TODO Auto-generated catch block
+			if(availableBalance==null){
+				availableBalance=0;
+			}
+			
+			System.out.println("availble Balance-=== "+availableBalance);
+			
+			Double newavailableBalance = new Double(availableBalance-amount);
+			Double newreservedBalance= new Double(reservedBalance+amount);
+			
+			pointItemMut.setPropertyValue("availableBalance", newavailableBalance.intValue());
+			pointItemMut.setPropertyValue("reservedBalance", newreservedBalance.intValue());
+			
+			getProfileRepository().updateItem(pointItemMut);
+			
+		} catch (RepositoryException e) {			
 			e.printStackTrace();
 		}
 		
-		PaymentStatusImpl status = new PaymentStatusImpl();
+		PaymentStatusImpl status = new PaymentStatusImpl(Long.toString(System.currentTimeMillis()),amount,true,"",new Date());
 
 		return status;
 	}
@@ -52,62 +74,25 @@ public class MyStoreProcProcessPointsPayment extends ProcProcessPaymentGroup{
 	@Override
 	public PaymentStatus creditPaymentGroup(PaymentManagerPipelineArgs arg0)
 			throws CommerceException {
-		System.out.println(arg0.getAmount());
-		System.out.println(arg0.getOrder());
-
+				System.out.println("MyStoreProcProcessPointsPayment======================\n\n\n creditPaymentGroup");		
 		Order order = arg0.getOrder();
-
 		String profileId = order.getProfileId();
 		System.out.println(profileId);
-
-		// profileRepository.ge
-		
-		try {
-			MutableRepositoryItem userItem = getProfileRepository().getItemForUpdate(profileId, "user");
 			
-			System.out.println(userItem);
-			userItem.getRepository().getItem("reservedBalance");
-			userItem.getRepository().getItem("availableBalance");
-			
-			
-		} catch (RepositoryException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		PaymentStatusImpl status = new PaymentStatusImpl();
-
+		PaymentStatusImpl status = new PaymentStatusImpl(Long.toString(System.currentTimeMillis()),1,true,"",new Date());
 		return status;
 	}
 
 	@Override
 	public PaymentStatus debitPaymentGroup(PaymentManagerPipelineArgs arg0)
 			throws CommerceException {
-		System.out.println(arg0.getAmount());
-		System.out.println(arg0.getOrder());
-
+				
+				System.out.println("MyStoreProcProcessPointsPayment======================\n\n\n debitPaymentGroup");					
 		Order order = arg0.getOrder();
-
 		String profileId = order.getProfileId();
 		System.out.println(profileId);
-
-		// profileRepository.ge
 		
-		try {
-			MutableRepositoryItem userItem = getProfileRepository().getItemForUpdate(profileId, "user");
-			
-			System.out.println(userItem);
-			userItem.getRepository().getItem("reservedBalance");
-			userItem.getRepository().getItem("availableBalance");
-			
-			
-		} catch (RepositoryException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		PaymentStatusImpl status = new PaymentStatusImpl();
-
+		PaymentStatusImpl status = new PaymentStatusImpl(Long.toString(System.currentTimeMillis()),1,true,"",new Date());
 		return status;
 	}
 

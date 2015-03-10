@@ -19,6 +19,8 @@ public class MyStoreProcValidatePointsPaymentGroup extends ApplicationLoggingImp
 	public int runProcess(Object paramObject, PipelineResult paramPipelineResult)
 			throws Exception {
 		
+		
+		System.out.println("LLLL::::::::::::::::::: MyStoreProcValidatePointsPaymentGroup");
 		ValidatePaymentGroupPipelineArgs validArgs=(ValidatePaymentGroupPipelineArgs)paramObject;
 		
 		Order order=validArgs.getOrder();

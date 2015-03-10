@@ -30,10 +30,8 @@
 
 	<item-descriptor super-type="paymentGroup" cache-mode="simple"
 		item-cache-timeout="180000" name="pointsPaymentGroup">
-		<table name="cts_points_pg" id-column-name="payment_group_id"
-			type="auxiliary">
-			<property item-type="points" name="pointsItem" column-name="points_item_id"
-				repository="/atg/userprofiling/ProfileAdapterRepository">
+		<table name="cts_points_pg" id-column-name="payment_group_id">
+			<property data-type="int" name="pointsItem" column-name="points_item_id">				
 			</property>
 			</table>
 	</item-descriptor>
