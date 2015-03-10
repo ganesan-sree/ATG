@@ -98,7 +98,25 @@
 	</message-sink>
 		
 		
-		
+		<message-sink>
+	<nucleus-name>
+		/cts/messaging/CtsLoginEvents
+	</nucleus-name>
+	<input-port>
+		<port-name>Login</port-name>
+		<input-destination>
+			<provider-name>
+				local
+			</provider-name>
+			<destination-name>
+				localdms:/local/DPSTopic/LoginEvents
+			</destination-name>
+			<destination-type>
+				Topic
+			</destination-type>
+		</input-destination>
+	</input-port>
+</message-sink>
 		
 
 	</patchbay>
