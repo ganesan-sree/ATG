@@ -10,13 +10,19 @@
 
     <item-descriptor name="user" item-expire-timeout="180000" item-cache-size="2000">
 
-
-
 	<table name="cts_rec_viewed" type="multi" id-column-name="user_id"
 		multi-column-name="sequence_id">
 		<property name="recentlyViewedProducts" column-name="rec_viewed_prod"
 			cascade="update,delete" data-type="list" component-item-type="recentlyViewedProduct"
 			display-name-resource="recentlyViewedProducts" category-resource="categoryCommerceBehaviorTracking">
+		</property>
+	</table>
+	
+	
+	<table name="cts_user_points" type="auxiliary" id-column-name="user_id">
+		<property name="points" column-name="points_id"
+			cascade="insert,update,delete"  component-item-type="points"
+			display-name-resource="points" >
 		</property>
 	</table>
     
@@ -33,6 +39,17 @@
       <property name="timestamp" data-type="timestamp" column-name="time_stamp" category-resource="categoryBasics" display-name-resource="timestamp"/>
     </table>
   </item-descriptor>
+
+
+
+	<item-descriptor name="points" item-cache-size="1000"
+		query-cache-size="1000">
+		<table name="cts_points" type="primary" id-column-name="points_id">
+			<property name="points_id" data-type="string" column-name="points_id" display-name-resource="points-id" />
+			<property name="availableBalance" data-type="string" column-name="available" display-name-resource="available balance" />
+			<property name="reservedBalance" data-type="string" column-name="reserved" display-name-resource="reserved balance" />
+		</table>
+	</item-descriptor>
   
 
 </gsa-template>

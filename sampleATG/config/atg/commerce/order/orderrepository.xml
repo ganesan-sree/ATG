@@ -36,4 +36,24 @@
 			</table>
 	</item-descriptor>
 	
+	
+	
+	<item-descriptor super-type="shippingGroup">	   
+	 <table name="dcspp_ship_group">  
+      <property  name="type" >        
+        <option value="shipToStoreShippingGroup" code="300"/>        
+     </property>
+     </table>
+	</item-descriptor>
+	
+	
+		<item-descriptor name="shipToStoreShippingGroup" super-type="hardgoodShippingGroup" sub-type-value="shipToStoreShippingGroup" >
+		<table name="mys_store_ship_group" id-column-name="ship_group_id" type="auxiliary">
+			<property data-type="int" name="store" column-name="store_id">				
+			</property>
+			</table>
+	</item-descriptor>
+	
+	
+	
 </gsa-template>

@@ -16,6 +16,24 @@
 			</output-port>
 
 		</message-source>
+		
+		
+		
+		<message-source>
+		<nucleus-name>
+			/cts/commerce/catalog/ProductBrowsed
+		</nucleus-name>
+		<output-port>
+			<port-name>ViewItem</port-name>
+			<output-destination>
+				<provider-name>local</provider-name>
+				<destination-name>
+					localdms:/local/DPSTopic/ViewItemEvents
+				</destination-name>
+				<destination-type>Topic</destination-type>
+			</output-destination>
+		</output-port>
+	</message-source>
 
 
 
@@ -54,21 +72,7 @@
 
 
 
-	<message-source>
-		<nucleus-name>
-			/cts/commerce/catalog/ProductBrowsed
-		</nucleus-name>
-		<output-port>
-			<port-name>ViewItem</port-name>
-			<output-destination>
-				<provider-name>local</provider-name>
-				<destination-name>
-					localdms:/local/DPSTopic/ViewItemEvents
-				</destination-name>
-				<destination-type>Topic</destination-type>
-			</output-destination>
-		</output-port>
-	</message-source>
+	
 
 
 	<message-sink>
